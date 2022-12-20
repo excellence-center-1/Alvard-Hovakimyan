@@ -1,0 +1,896 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "GCEodKTbRd_r"
+      },
+      "source": [
+        "# Homework Exercises "
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "1WbPDB3mI7MO"
+      },
+      "source": [
+        "Problem1. Write a function named `file_writer`, which will take as input a text and a file name (as strings), then will create a text file (.txt) with the given file name and will write the given text in it.\n",
+        "\n",
+        "  Գրել `file_writer` անունով ֆունկցիա, որը որպես մուտքային փոփոխականներ կվերցնի տեքստ և ֆայլի անուն string-ի տեսքով, այնուհետև կստեղծի տեքստային ֆայլ տրված անունով և տրված տեքստը կգրի ֆայլի մեջ։"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "hfFxrQ4YI6v7"
+      },
+      "source": [
+        "# your code here\n",
+        "def file_writer(text,filename):\n",
+        "  open(filename,'x')\n",
+        "  filename.write(text)\n",
+        "  filename.close()"
+      ],
+      "execution_count": 24,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "DWL-vj2DECV9",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 341
+        },
+        "outputId": "c5383256-bc19-49c4-a510-b90f7e7599e0"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "text = \"\"\"Երբ չի մնում ելք ու ճար,\n",
+        "Խենթերն են գտնում հնար,\n",
+        "Այսպես ծագեց, արեգակեց\n",
+        "Սարդարապատի մարտը մեծ:\n",
+        "\"\"\"\n",
+        "file_writer(text, 'file1.txt')\n",
+        "file_writer('Some text', 'file2.txt')"
+      ],
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "FileExistsError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mFileExistsError\u001b[0m                           Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-26-29d07229fd62>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0mՍարդարապատի\u001b[0m \u001b[0mմարտը\u001b[0m \u001b[0mմեծ\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      6\u001b[0m \"\"\"\n\u001b[0;32m----> 7\u001b[0;31m \u001b[0mfile_writer\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mtext\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m'file1.txt'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      8\u001b[0m \u001b[0mfile_writer\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'Some text'\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m'file2.txt'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m<ipython-input-24-4bb44b58f50a>\u001b[0m in \u001b[0;36mfile_writer\u001b[0;34m(text, filename)\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;31m# your code here\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0;32mdef\u001b[0m \u001b[0mfile_writer\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mtext\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0mfilename\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m   \u001b[0mopen\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfilename\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m'x'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      4\u001b[0m   \u001b[0mfilename\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mwrite\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mtext\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m   \u001b[0mfilename\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mclose\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mFileExistsError\u001b[0m: [Errno 17] File exists: 'file1.txt'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "3HEZ6dl0ekny"
+      },
+      "source": [
+        "Problem2. Write a function called `file_reader`, which will take the name of a text file and will return its content.\n",
+        "\n",
+        "  Գրել `file_reader` անունով ֆունկցիա, որը կվերցնի տեքստային ֆայլի անունը, ապա կվերադարձնի այդ ֆայլի պարունակությունը։ "
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "AgRYItgXek22"
+      },
+      "source": [
+        "# your code here\n",
+        "def file_reader(file1):\n",
+        "  file1 = open(file1, 'r')\n",
+        "  file1.read()\n",
+        "  return file1.read()\n",
+        "  file1.close()"
+      ],
+      "execution_count": 29,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Jx9bZPj9YhV4",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 202
+        },
+        "outputId": "e659ff7d-0e13-49b6-ac23-4daa1a14f5c2"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "assert file_reader('file1.txt') == text\n",
+        "assert file_reader('file2.txt') == 'Some text'"
+      ],
+      "execution_count": 28,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "AssertionError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mAssertionError\u001b[0m                            Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-28-e892d65f235b>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;31m# Do not modify this cell\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0;32massert\u001b[0m \u001b[0mfile_reader\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'file1.txt'\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0mtext\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      3\u001b[0m \u001b[0;32massert\u001b[0m \u001b[0mfile_reader\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'file2.txt'\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0;34m'Some text'\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mAssertionError\u001b[0m: "
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "_OkxDUHEI6kS"
+      },
+      "source": [
+        "Problem3. Write a function called `add_excitement` that takes two arguments \n",
+        "1. a list of strings \n",
+        "2. boolean variable called `modify`\n",
+        "\n",
+        " and adds an exclamation\n",
+        "point (`!`) to the end of each string in the list. In case modify is `True`, the program should modify the\n",
+        "original list and not return anything, otherwise \n",
+        "the program should not modify the original list and should\n",
+        " return a new list instead.\n",
+        "\n",
+        "  Գրել `add_excitement` անունով ֆունկցիա, որը կվերցնի երկու մուտքային տվյալ՝\n",
+        "  1. string-ների list\n",
+        "  2. boolearn փոփոխական՝ `modify` անունով\n",
+        "\n",
+        "  և list-ի յուրաքանչյուր բառի վերջում կավելացնի բացականչական նշան (`!`)։ Երբ `modify=True`, այդ դեպքում ծրագիրը պետք է կատարի վերոնշյալ փոփոխությունը սկզբնական list-ի վրա և ոչինչ չվերադարձնի, իսկ եթե `modify=False`, այդ դեպքում ծրագիրը պետք է չփոփոխի սկզբնական list-ը և վերադարձնի ստացված նոր list-ը։"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "cTN0Ve60jEqT"
+      },
+      "source": [
+        "def add_excitement(strl,modify): \n",
+        "  if modify==True:\n",
+        "    for i in range(len(strl)):\n",
+        "      strl[i]+='!'\n",
+        "  else:\n",
+        "    aa=[i+'!' for i in strl]\n",
+        "    return aa "
+      ],
+      "execution_count": 12,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "51ssfjY2c1u_"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "list1 = ['dog', 'cat']\n",
+        "list2 = add_excitement(list1, False) \n",
+        "assert add_excitement(list1, True) is None\n",
+        "assert list1 == list2"
+      ],
+      "execution_count": 13,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "4TNaI0i1-pxA"
+      },
+      "source": [
+        "Problem4. Write a function called `first_diff` that is given two strings and returns the first location in\n",
+        "which the strings differ. If the strings are identical, it should return -1.\n",
+        "\n",
+        "  Գրել `first_diff` անունով ֆունկցիա, որը տրված երկու string-ների համար վերադարձնում է առաջին ինդեքսը, որտեղ երկու string-ների արժեքները տարբերվում են։ Եթե string-ները ամբողջովին համընկնում են, ապա ֆունկցիան պետք է վերադարձնի -1:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "043SgZDT-par"
+      },
+      "source": [],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "HrKl3hN_BnuF"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "assert first_diff('dog', 'cat') == 0\n",
+        "assert first_diff('dog', 'dog') == -1\n",
+        "assert first_diff('dog', 'don') == 2"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "32hdDmh3VHfY"
+      },
+      "source": [
+        "Problem5. Write a function named `rand_number` that takes an integer `n` and returns a random positive integer with exactly `n` digits. For\n",
+        "example, if `n` is 3, then 125 and 593 would be valid return values, but 093 would not because\n",
+        "that is really 93, which is a two-digit number.\n",
+        "\n",
+        "  Գրել `rand_number` անունով ֆունկցիա, որը վերցնում է ամբողջ թիվ `n` անունով և վերադարձնում է պատահական դրական ամբողջ թիվ, որը պարունակում է `n` թվանշան։ Օրինակ՝ եթե `n=3`, ապա 125 կամ 593-ը կլինեին բավարար պատասխաններ, բայց օրինակ 093-ը՝ ոչ, քանի որ այդպիսի ամբողջ թիվ չկա, չնայած, որ այն պարունակում է 3 նիշ։  \n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "8OmuGQjqVHjn"
+      },
+      "source": [],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "wmUpHS-k-2LS"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "assert 1 <= rand_number(1) <= 9\n",
+        "assert 10 <= rand_number(2) <= 99\n",
+        "assert 100 <= rand_number(3) <= 999\n",
+        "assert 1000 <= rand_number(4) <= 9999 "
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "YUaFYy8OIHWp"
+      },
+      "source": [
+        "Problem6. Write a function called `closest` that takes a list of numbers `L` and a number `n` and returns\n",
+        "the largest element in `L` that is not larger than `n`. For instance, if `L=[1,6,3,9,11]` and `n=8`,\n",
+        "then the function should return `6`, because `6` is the closest thing in `L` to `8` that is not larger than\n",
+        "`8`. If all numbers in the list are larger than `n`., then the function should return `Enter another list`.\n",
+        "\n",
+        "  Գրել `closest` անունով ֆունկցիա, որը վերցնում է թվերի list `L` անունով, ինչ-որ թիվ որպես `n` և վերադարձնում է `L` list-ի այն թիվը որն ամենամոտն է տրված `n`-ին, բայց մեծ չէ `n`-ից։ Եթե list-ի բոլոր թվերը մեծ են `n`-ից, ապա ֆունկցիան պետք է վերադարձնի `Enter another list`:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "xrSVUy31IHeV"
+      },
+      "source": [],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ReO3DLic_2aW"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "assert closest([1, 6, 3, 9, 11], 8) == 6\n",
+        "assert closest([51, 61, 31, 91, 111], 18) == 'Enter another list'\n",
+        "assert closest([1.03, 3.2, 3, 3.9, 7.67], 3.99) == 3.9"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "FgcH-562IHlB"
+      },
+      "source": [
+        "Problem7. Write a function called `matches` that takes two strings as arguments and returns how many\n",
+        "matches there are between the strings. A match is where the two strings have the same character\n",
+        "at the same index. For instance, `'python'` and `'path'` match in the first, third, and\n",
+        "fourth characters, so the function should return 3.\n",
+        "\n",
+        "  Գրել `matches` անունով ֆունկցիա, որը կվերադարձնի տրված երկու string-ների սիմվոլների համընկումների քանակը։ Օրինակ՝ `'python'` և `'path'` string-ների համար, արդյունքը կլինի 3, քանի որ առաջին, երրորդ և չորրորդ սիմվոլները նույնն են։"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "KMqAiNsGIHsU"
+      },
+      "source": [],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "NOY62RlYDBGH"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "assert matches('python', 'path') == 3\n",
+        "assert matches('path', 'pathway') == 4\n",
+        "assert matches('abcd', 'dcba') == 0"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "IicCIcQvIHxY"
+      },
+      "source": [
+        "Problem8. Write a function called `findall` that\n",
+        "given a string and a single character, returns a list containing all of the locations (indices) of that character\n",
+        "in the string. It should return `None` if there are no occurrences of the character\n",
+        "in the string.\n",
+        "\n",
+        "  Գրել `findall` անունով ֆունկցիա, որը տրված string-ի և սիմվոլի համար վերադարձնում է list, որում string-ի այն ինդեքսներն են, որտեղ գրված է տրված սիմվոլը։ Եթե տրված սիմվոլը բացակայում է string-ից, ուրեմն պետք է վերադարձնել `None`: Օրինակ՝ `antarctida` string-ի և `a` սիմվոլի համար ֆունկցիան պետք է վերադարձնի `[0,3,9]` list-ը։\n",
+        "  "
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "gW2JdxzWIH4g"
+      },
+      "source": [],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "GPqn62LNEWXs"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "assert findall('antarctida', 'a') == [0, 3, 9]\n",
+        "assert findall('Unit1991', 'a') is None\n",
+        "assert findall('Unit1991', 'i') == [2]"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "MEC70di4IH_O"
+      },
+      "source": [
+        "Problem9. Write a function called `change_case` that given a string, returns a string with each upper\n",
+        "case letter replaced by a lower case letter and vice-versa.\n",
+        "\n",
+        "  Գրել `change_case` անունով ֆունկցիա, որը տրված string-ի համար վերադարձնում է մեկ այլ string, որտեղ յուրաքանչյուր փոքրատառ տառ գրված է մեծատառով և հակառակը։ Օրինակ՝ `Hello` string-ի համար պետք է վերադարձնի `hELLO`: Հուշում․ կարելի է օգտագործել string-ների `isupper()` և `islower()` մեթոդները։  "
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "wU6-9X9zIIFe"
+      },
+      "source": [],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "fgYokOglpHJO"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "assert change_case('Hello') == 'hELLO'\n",
+        "assert change_case('HELLO') == 'hello'\n",
+        "assert change_case('hello') == 'HELLO'\n",
+        "assert change_case('Unit1991') == 'uNIT1991'"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "DX4939I0Kdqt"
+      },
+      "source": [
+        "Problem10. Write a function called `is_sorted` that is given a list and returns `True` if the list is sorted\n",
+        "and `False` otherwise.\n",
+        "\n",
+        "  Գրել `is_sorted` անունով ֆունկցիա, որը տրված list-ի համար վերադարձնում է `True`, եթե list-ը սորտավորված է (աճման կարգով) և `False`՝ հակառակ դեպքում"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "bAKqzpv6KfDJ"
+      },
+      "source": [],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "nRmoCYO2FDzj"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "assert is_sorted([0,1,2,3])\n",
+        "assert not is_sorted([3,1,2,3])\n",
+        "assert is_sorted([0,1,2,3,3,4,4,4])"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "3sutpNpEDrgB"
+      },
+      "source": [
+        "Problem11. Write a called `sum_even` function with one line which will return True if the sum of input numbers is even, else it should return False.\n",
+        "\n",
+        "  Գրել մեկ տողանի ֆունկցիա `sum_even` անունով, որը կվերադարձնի True, եթե տրված մուտքային տվյալների գումարը զույգ է և False՝ հակառակ դեպքում։"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "dk8eDqtDDrnV"
+      },
+      "source": [
+        "def sum_even(*number1):\n",
+        "    return sum(number1) % 2 == 0"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "vXxZHhNGDrr2"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "assert not sum_even(2, 3, 3, 5)\n",
+        "assert not sum_even(2, 3)\n",
+        "assert sum_even(2, 3, 3, 5, 2, 3, 4, 5, 7)\n",
+        "assert sum_even(2)"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "NchkNfHVDrwQ"
+      },
+      "source": [
+        "Problem12. Write a function called `number_of_vowels` which will return the number of vowels ('o', 'a', 'u', 'i', 'e') in a string.\n",
+        "\n",
+        "  Գրել `number_of_vowels` անունով ֆունկցիա, որը կվերադարձնի դրա մեջ տրված string-ի մեջ եղած ձայնավորների ('o', 'a', 'u', 'i', 'e') քանակը։"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "a-0UcEN-Dr0R"
+      },
+      "source": [
+        "def number_of_vowels(str1):\n",
+        "  c = 0\n",
+        "  for i in str1.lower():\n",
+        "    if i in 'aoieu':\n",
+        "      c += 1\n",
+        "  return c"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Qy7tbKmYDr4T"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "assert number_of_vowels('Antarctida') == 4\n",
+        "assert number_of_vowels('qwrtyp') == 0\n",
+        "assert number_of_vowels('These letters are vowels in English') == 11"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "pyTgpK31Dr8e"
+      },
+      "source": [
+        "Problem13. Write a function called `verbose` that, given an integer less than 1000, returns the name of\n",
+        "the integer in Armenian. As an example, `verbose(123)` should return `հարյուր քսաներեք`.\n",
+        "\n",
+        "  Գրել `verbose` անունով ֆունկցիա, որը 1000-ից փոքր դրական ամբողջ թվի համար վերադարձնում է թվի անվանումը հայերեն, օրինակ՝ verbose(123)-ը պետք է վերադարձնի `հարյուր քսաներեք`։"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "8Nua9FobDsAb"
+      },
+      "source": [
+        "def verbose(n):\n",
+        "  har=n//100  \n",
+        "  miav=n%10\n",
+        "  tas=(n-(har*100+miav))//10\n",
+        "  tasnavor={1:'տասն',2:'քսան',3:'եռեսուն',4:'քառասուն',5:'հիսուն',6:'վաթսուն',7:'յոթանասուն',8:'ութանասուն',9:'իննսուն'}\n",
+        "  miavhar={1:'մեկ',2:'երկու',3:'երեք',4:'չորս',5:'հինգ',6:'վեց',7:'յոթ',8:'ութ',9:'իննը'}\n",
+        "  if har!=0 and tas!=0 and har!= 1:\n",
+        "    print(miavhar[har],'հարյուր',tasnavor[tas]+miavhar[miav])\n",
+        "  elif har==0 and tas!=0:\n",
+        "    print(tasnavor[tas]+miavhar[miav])\n",
+        "  elif har == 1:\n",
+        "      print('հարյուր',tasnavor[tas]+miavhar[miav])\n",
+        "  else:\n",
+        "    print(miavhar[miav])"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "AahthD78Fc2v",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "af1c2354-4724-48d1-eaa4-6de9fd1abc9a"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "verbose(123)\n",
+        "verbose(267)\n",
+        "verbose(89)\n",
+        "verbose(5)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "հարյուր քսաներեք\n",
+            "երկու հարյուր վաթսունյոթ\n",
+            "ութանասունիննը\n",
+            "հինգ\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "3Z3km5ZJFegE"
+      },
+      "source": [
+        "Problem14. Write a function called `calc` that accepts a sentence and calculates the number of letters, digits and returns as a tuple.\n",
+        "Suppose the following input is supplied to the program:\n",
+        "`hello world! 123`\n",
+        "Then, the output should be a tuple with  `(10, 3)`:\n",
+        "\n",
+        "  Գրել `calc` անունով ֆունկցիա, որը կվերցնի նախադասություն և կվերադարձնի դրա մեջ հանդիպած տառերի և թվանշանների քանակը որպես tuple: Օրինակ՝ `calc('hello world! 123')=(10, 3)`։ "
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "NS7CNcu_Felh"
+      },
+      "source": [
+        "def calc(st1):\n",
+        "  count1=0\n",
+        "  count2=0\n",
+        "  for i in st1:\n",
+        "    if i.isalpha():\n",
+        "      count1+=1\n",
+        "    if i.isdigit():\n",
+        "      count2+=1\n",
+        "  return (count1,count2)"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "3W3FCirZFep3"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "assert calc('hello world! 123') == (10, 3)\n",
+        "assert calc('1994') == (0, 4)\n",
+        "assert calc('hello world!') == (10, 0)\n",
+        "assert calc('@#^$*&!') == (0, 0)"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "si8p60R3FnB1"
+      },
+      "source": [
+        "Problem15. Assuming that we have some email addresses in the \"username@companyname.com\" format, please write a function called `email_to_username` to print the user name of a given email address. Both user names and company names are composed of letters only.\n",
+        "\n",
+        "  Գրել `email_to_username` անունով ֆունկցիա, որը կվերցնի \"username@companyname.com\" ֆորմատի վանակացած email հասցե և կվերադարձնի username-ը։"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "DWvVGi9iFnGl"
+      },
+      "source": [
+        "def email_to_username(str1):\n",
+        "  for i in range(len(str1)):\n",
+        "    if str1[i] == \"@\":\n",
+        "      return str(str1[:i])\n",
+        "  "
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "lzXeIyaPFevC"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "assert email_to_username('nshan@gmail.com') == 'nshan'\n",
+        "assert email_to_username('aramhayrapetyan@google.com') == 'aramhayrapetyan'\n",
+        "assert email_to_username('hayrapetyan@yahoo.com') == 'hayrapetyan'"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "urpwiR2SFeyr"
+      },
+      "source": [
+        "Problem16. Write a function called `merge` that takes two already sorted lists of possibly different lengths,\n",
+        "and merges them into a single sorted list without using the `sort` method or `sorted` function.\n",
+        "\n",
+        "  Գրել `merge` անունով ֆունկցիա, որը վերցնում է տարբեր երկարության երկու դասավորված list-եր և միացնում է դրանք՝ վերադարձնելով դրանց դասավորված տարբերակը առանց օգտագործելու `sort` մեթոդը կամ `sorted` ֆունկցիան։"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "om-MeP3YFe3X"
+      },
+      "source": [
+        "def merge(a,b):\n",
+        "  cc=a+b\n",
+        "  d=[]\n",
+        "  for i in range(len(cc)):\n",
+        "    d.append(min(cc))\n",
+        "    cc.remove(min(cc))\n",
+        "  return d"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "kEgI-ofjFe7Z"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "assert merge([1, 2, 5], [2, 3, 4]) == [1, 2, 2, 3, 4, 5]\n",
+        "assert merge([11, 25, 105],[2, 4, 38]) == [2, 4, 11, 25, 38, 105]\n",
+        "assert merge([11, 25, 105],\n",
+        "             [1, 2, 3, 4, 5, 6, 7]) == [1, 2, 3, 4, 5, 6, 7, 11, 25, 105]"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "MqNXa8vkF1Yp"
+      },
+      "source": [
+        "Problem17. Write a function called `root` that is given a number `x` and an integer `n` and returns $x^\\frac{1}{n}$. In\n",
+        "the function definition, set the default value of `n` to `2`.\n",
+        "\n",
+        "  Գրել `root` անունով ֆունկցիա, որը վերցնում է `x` դրական թիվ և `n` ամբողջ թիվ և վերադարձնում է $x^\\frac{1}{n}$։ Ֆուկցիայի սահմանման մեջ `n`-ի սկզբնական արժեքը դնել 2:\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "y6RVEgOyF1dl"
+      },
+      "source": [
+        "def root(x,n=2):\n",
+        "  return x**(1/n)"
+      ],
+      "execution_count": 1,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "C8ht4-hFF7Lm"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "assert root(25, 2) == 5.0\n",
+        "assert root(16) == 4.0\n",
+        "assert root(81, 4) == 3.0"
+      ],
+      "execution_count": 2,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "MVh8b7q3F-BR"
+      },
+      "source": [
+        "Problem18. Download the `Lab5_article.txt` file to your computer from `Courses/Labs/Lab_files` folder and upload it into your Colab directory.\n",
+        "\n",
+        "Go over the article and count the frequency of each word. Ignore the following words `{the, of, and, in, to, a, was, on, by, is, which}` and symbols `{'\\n', '(', ')', '.', ' - ', ':', ','}`, also ignore the letter cases (treat all letters as lower case). You should write the overall results to an `output.txt` file, where each line should contain the words and word frequences (separated by a tab '\\t') in descending order of the frequences.\n",
+        "\n",
+        "  `Courses/Labs/Lab_files` folder֊ից ներբեռնիր `Lab5_article.txt` ֆայլը համակարգչիդ մեջ այնուհետև վերբեռնիր այն Google Colab: Գրիր ծրագիր, որի միջոցով կկարդաս հոդվածը և կհաշվես բառերի հաճախականությունները՝ անտեսելով հետևյալ բառերը․ `{the, of, and, in, to, a, was, on, by, is, which}` և կետադրական նշանները `{'\\n', '(', ')', '.', ' - ', ':', ','}`, ինչպես նաև մեծատառ/փոքրատառերը։ Վերջնարդյունքը պետք է լինի `output.txt` ֆայլի մեջ, որտեղ ամեն տողում գրված կլինի մեկ բառ և դրան համապատասխան հաճախականությունը առանձնացված թաբով ('\\t'), ընդ որում բառերը պետք է գրված լինեն հաճախականությունների նվազման կարգով։"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "0yNbT2zeF-RR"
+      },
+      "source": [
+        "# your code here\n",
+        "# Hints: you might want to use string methods such as .replace(), .split()\n",
+        "with open('Lab5_article.txt') as f:\n",
+        "  # your code here\n",
+        "\n",
+        "\n",
+        "  "
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "PXbYsx49F-bF"
+      },
+      "source": [
+        "# Do not modify this cell\n",
+        "with open('output.txt') as f:\n",
+        "  assert f.readline().replace('\\n','').split('\\t') == ['nagorno-karabakh', '34']\n",
+        "  assert f.readline().replace('\\n','').split('\\t') == ['azerbaijan', '25']\n",
+        "  assert f.readline().replace('\\n','').split('\\t') == ['armenian', '19']\n",
+        "  assert f.readline().replace('\\n','').split('\\t') == ['armenia', '14']\n",
+        "  assert f.readline().replace('\\n','').split('\\t') == ['ssr', '12']"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "o7TRK0tsHGQ7"
+      },
+      "source": [
+        "Problem19. Suppose weapon assignment is done in the following manner: \n",
+        "The soldiers who\n",
+        "\n",
+        "* are tall (strictly above 180 cm) and slim (below 75 kg), SVD rifle will be assigned to them\n",
+        "* are tall (strictly above 180 cm) and phisically well trained (above 75 kg below 120 kg), PK machine gun will be assigned to them\n",
+        "* are not so tall (below ($\\leq$) 180 cm and above 165 cm) and weight above 60 kg and less than or equal to 75 kg, RPK-74 is assigned to them\n",
+        "* don't belong to any of these groups, AK-74 is assigned to them.\n",
+        "\n",
+        "Write a function called `weapon_assigner` that takes a soldier's info as a dictionary and returns a list with the following info ['name', 'weapon'].\n",
+        "\n",
+        "  Դիցուք՝ զինատեսակի ամրակցումը տեղի է ունենում հետևյալ օրենքով․ եթե զինծառայողը\n",
+        "\n",
+        "  * բարձրահասակ է (>180cm) և նիհար(<75kg), նրա զենքը կլինի SVD տիպի\n",
+        "  * բարձրահասակ է (>180cm) և ֆիզիկապես լավ պատրաստված(75kg֊ից ավել և 120 կգ֊ից պակաս), նրա զենքը կլինի PK գնացիր \n",
+        "  * բարձրահասակ չէ (180cm֊ից ցածր և 165cm-ից բարձր) և քաշը 60 կգ֊ից բարձր է, բայց ամենաշատը 75 կգ է, ապա նրա զենքը կլինի RPK-74 տիպի\n",
+        "  * չի պատկանում վերոնշյալ խմբերից ոչ մեկին, ապա նրա զենքը կլինի AK-74 տիպի։\n",
+        "\n",
+        "  Գրել `weapon_assigner` անունով ֆունկցիա, որը կվերցնի զինվորի տվյալներ dictionary֊ի միջոցով և կվերադարձնի նրա հետ կապված list՝ հետևյալ ֆորմատով ['անուն', 'զինատեսակ']:  "
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ZJe6o1yiHGVu",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "bdc1a40c-6e82-4fb6-b4d3-317a6b1c7873"
+      },
+      "source": [
+        "def weapon_assigner(di):\n",
+        "  if di['height'] > 180 and di['weight'] < 75:\n",
+        "    return [di['name'], 'SVD']\n",
+        "  elif di['height'] > 180 and 75 < di['weight'] < 120:\n",
+        "    return [di['name'], 'PK']\n",
+        "  elif 165 < di['height'] < 180 and di['weight'] <= 75:\n",
+        "    return [di['name'], 'RPK-74']\n",
+        "  return [di['name'], 'AK-74']\n",
+        "#weapon_assigner({'name': 'Poghos Poghosyan',\n",
+        " #                       'height': 175,\n",
+        "  #                      'weight': 75})"
+      ],
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['Poghos Poghosyan', 'RPK-74']"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 8
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ZPfEB2zlMHXb"
+      },
+      "source": [
+        "assert weapon_assigner({'name': 'Poghos Poghosyan',\n",
+        "                        'height': 175,\n",
+        "                        'weight': 75}) == ['Poghos Poghosyan', 'RPK-74']\n",
+        "assert weapon_assigner({'name': 'Petros Poghosyan',\n",
+        "                        'height': 189,\n",
+        "                        'weight': 80}) == ['Petros Poghosyan', 'PK']\n",
+        "assert weapon_assigner({'name': 'Poghos Petrosyan',\n",
+        "                        'height': 189,\n",
+        "                        'weight': 74}) == ['Poghos Petrosyan', 'SVD']"
+      ],
+      "execution_count": 9,
+      "outputs": []
+    }
+  ]
+}
