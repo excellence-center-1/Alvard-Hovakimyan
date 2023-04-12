@@ -1,3 +1,58 @@
-ex1-  https://dbdiagram.io/d/642fd1fd8615191cfa8c20ef  //   
-ex2-https://dbdiagram.io/d/642fd1fd8615191cfa8c20ef
+ex1-  
+
+table "student" {
+  "id" SERIAL [PRIMARY KEY]
+  "name" VARCHAR(20)
+  "last_name" VARCHAR(30)
+  "address" VARCHAR(30)
+  "phon" VARCHAR(20)
+}
+
+table "curs"{
+  "id" SERIAL [PRIMARY KEY]
+  "st_id" VARCHAR(20)
+  "curs" INT
+}
+
+table "grad"{
+  "id" SERIAL [PRIMARY KEY]
+  "st_id" INT
+  "curs_id" INT
+  "grade" INT
+}
+
+
+Ref: "grad"."st_id" < "student"."id"
+
+Ref: "curs"."st_id" < "student"."id"
+
+Ref: "grad"."curs_id" < "curs"."id"
+
+
+ex2-
+table "customer" {
+  "id" SERIAL [PRIMARY KEY]
+  "name" VARCHAR(20)
+  "address" VARCHAR(20)
+}
+
+table "product"{
+  "id" SERIAL [PRIMARY KEY]
+  "name" VARCHAR(20)
+  "price" INT
+}
+
+table "order"{
+  "id" SERIAL [PRIMARY KEY]
+  "customer_id" INT
+  "product_id" INT
+  "date" date
+  "quantity" INT
+
+}
+
+Ref: "order"."customer_id" > "customer"."id"
+Ref: "order"."product_id" > "product"."id"
+
 ex3-
+
