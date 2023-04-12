@@ -80,3 +80,41 @@ Ref: "actor"."movie_id" < "movie"."id"
 Ref: "actor"."reviewer_id" < "reviewer"."id"
 
 ex4-
+Table "course" {
+  "id" SERIAL [primary key]
+  "name" varchar(10)
+  "instructor" varchar(10)
+  "student_id" integer
+}
+
+Table "student" {
+  "id" SERIAL [primary key]
+  "name" varchar(1100)
+}
+
+
+Ref: "course"."student_id" < "student"."id"
+
+ex6-
+
+Table "employ" {
+  "id" SERIAL [primary key]
+  "name" varchar(20)
+  "address" varchar(30)
+}
+
+Table "department" {
+  "id" SERIAL [primary key]
+  "name" varchar(20)
+  "man_id" integer
+  "employee_id" integer
+}
+
+Table "manager" {
+  "id" SERIAL [primary key]
+  "name" varchar(20)
+  "last_name" varchar(30)
+}
+
+Ref: "department"."man_id" > "manager"."id"
+Ref: "department"."employee_id" > "employ"."id"
