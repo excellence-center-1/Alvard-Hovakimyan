@@ -15,10 +15,9 @@ table "curs"{
 }
 
 table "grad"{
-  "id" SERIAL [PRIMARY KEY]
+  "grade" INT [PRIMARY KEY]
   "st_id" INT
   "curs_id" INT
-  "grade" INT
 }
 
 
@@ -55,4 +54,29 @@ Ref: "order"."customer_id" > "customer"."id"
 Ref: "order"."product_id" > "product"."id"
 
 ex3-
+Table "movie" {
+  "id" SERIAL [primary key]
+  "director" varchar(20)
+  "title" varchar(20)
+  "genre" varchar(20)
+  "price" int
+}
 
+Table "actor"{
+  "id" SERIAL [primary key]
+  "name" varchar(20)
+  "movie_id" int
+  "reviewer_id" int
+}
+
+Table "reviewer" {
+  "id" SERIAL [primary key]
+  "name" varchar(20)
+}
+
+
+Ref: "actor"."movie_id" < "movie"."id"
+
+Ref: "actor"."reviewer_id" < "reviewer"."id"
+
+ex4-
