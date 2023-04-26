@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="login.css">
+    <title>Sign Up</title>
+    <link rel="icon" type="image/jpg"  href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS99WfkrDPzCxMTILGsUjTqLvgKZjNwMFOveQ&usqp=CAU">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title">Sign Up</div>
+      <hr>
+      <form action="#">
+        <div class="field" >
+            <input type="text" required>
+            <label>First Name</label>
+        </div>
+        <div class="field">
+            <input type="text" required>
+            <label>Last Name</label>
+        </div>
+        <div class="field">
+          <input type="email" required>
+          <label>Email Address or Phone number</label>
+        </div>
+        <div class="field">
+          <input type="password" required>
+          <label>Password</label>
+        </div>
+        <div class="field">
+            <input type="date" name="begin"  value="" min="1997-01-01" max="2030-12-31"  required>
+            <label></label>
+        </div>
+        <center>
+            <div class="radios">
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="custom">Custom
+            </div>
+        </center>
+        <div class="content">
+          <div class="checkbox">
+            <input type="checkbox" id="remember-me">
+            <label for="remember-me">Remember me</label>
+          </div>
+        </div>
+        <div class="field">
+          <input type="submit" value="Sign Up">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
