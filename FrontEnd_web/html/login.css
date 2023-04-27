@@ -17,6 +17,14 @@ html,body {
   border-radius: 15px;
   box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
 }
+.dark {
+  margin-left: auto; 
+  margin-right: 10px;
+}
+.dark:checked ~ * {
+  box-shadow: 0 0 0 3px rgb(0, 0, 0);
+  color: rgb(252, 252, 252);
+}
 .wrapper .title {
   font-size: 35px;
   font-weight: 600;
