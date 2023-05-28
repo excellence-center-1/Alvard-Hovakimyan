@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateBoardSize() {
     const newSize = parseInt(sizeInput.value);
-    if (newSize !== boardSize && newSize >= 3 && newSize <= 10) {
+    if (newSize !== boardSize && newSize >= 3 && newSize <= 6) {
       boardSize = newSize;
       restartGame();
       createBoard();
