@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Runing code
 ### DataB info
-#### create user and db
+#### Create user and db
 go psql and run this code
 
 CREATE USER myuser2 WITH PASSWORD 'mypass';
@@ -17,7 +17,7 @@ GRANT ALL PRIVILEGES ON DATABASE pole TO myuser2;
 
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO myuser2;
 
- #### create table
+ #### Create table
  
  CREATE TABLE user_data (
  
