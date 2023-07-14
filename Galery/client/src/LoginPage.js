@@ -28,7 +28,7 @@ const LoginPage = ({ onLoginSuccess }) => {
       // Login failed
       alert('Invalid email or password');
     }
-    var newpassword = password;
+   
     // Reset the form fields after submission (optional)
     setEmail('');
     setPassword('');
