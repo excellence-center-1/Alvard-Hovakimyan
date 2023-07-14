@@ -69,8 +69,6 @@ app.post('/login', async (req, res) => {
   }
 });
 
-});
-
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'public/images'); // Set the destination folder for storing the images
