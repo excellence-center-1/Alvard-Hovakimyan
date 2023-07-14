@@ -37,6 +37,7 @@ app.post('/register', async (req, res) => {
 });
 
 // Login endpoint
+// Login endpoint
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
@@ -66,6 +67,8 @@ app.post('/login', async (req, res) => {
     console.error(error);
     res.status(500).json({ message: 'Login failed', error: error.message });
   }
+});
+
 });
 
 const storage = multer.diskStorage({
