@@ -19,7 +19,7 @@ GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO myuser2;
 
  #### Create table
  
- CREATE TABLE user_data (
+ CREATE TABLE user (
  
   id SERIAL PRIMARY KEY,
   
