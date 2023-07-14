@@ -8,7 +8,7 @@ const path = require('path');
 
 app.use(express.json());
 app.use(cors());
-
+/*
 const storage = multer.diskStorage({
   destination: './uploads',
   filename: function (req, file, cb) {
@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
   }
 });
 const upload = multer({ storage });
-
+*/
 // Registration endpoint
 app.post('/register', async (req, res) => {
   const { firstName, lastName, password, date_of_birth , email} = req.body;
