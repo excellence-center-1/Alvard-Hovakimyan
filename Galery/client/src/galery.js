@@ -7,21 +7,6 @@ const Galery = () => {
   const [searchCategory, setSearchCategory] = useState('');
   const [filteredImages, setFilteredImages] = useState([]);
 
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setSelectedImage({
-          file,
-          category: '',
-          dataURL: reader.result,
-        });
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   const handleAddImage = (e) => {
     e.preventDefault();
     if (selectedImage && selectedImage.category.trim() !== '') {
@@ -49,14 +34,20 @@ const Galery = () => {
       <h1>Image Gallery</h1>
       <div className="image-container">
         {filteredImages.map((image, index) => (
-          <img src={image.dataURL} alt={`Image ${index}`} key={index} />
+          <img src={image.url} alt={`Image ${index}`} key={index} />
         ))}
       </div>
       <form onSubmit={handleAddImage}>
         <input
-          type="file"
-          accept="image/*"
-          onChange={handleImageUpload}
+          type="text"
+          value={selectedImage ? selectedImage.url : ''}
+          onChange={(e) =>
+            setSelectedImage({
+              ...selectedImage,
+              url: e.target.value,
+            })
+          }
+          placeholder="Image URL"
         />
         <input
           type="text"
