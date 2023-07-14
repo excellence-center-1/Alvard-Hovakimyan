@@ -3,6 +3,29 @@ const app = express();
 const pool = require('./db');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+
+app.use(express.json());
+
+// Registration endpoint
+app.post('/register', async (req, res) => {
+  // Your registration code here
+});
+
+// Login endpoint
+app.post('/login', async (req, res) => {
+  // Your login code here
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+
+
+/*const express = require('express');
+const app = express();
+const pool = require('./db');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const multer = require('multer'); // Import multer for handling file uploads
 
 app.use(express.json());
@@ -54,3 +77,4 @@ app.post('/upload-image', upload.single('image'), async (req, res) => {
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
+*/
