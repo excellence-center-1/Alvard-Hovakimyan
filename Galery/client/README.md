@@ -17,7 +17,7 @@ GRANT ALL PRIVILEGES ON DATABASE pole TO myuser2;
 
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO myuser2;
 
- #### Create table
+ [#### Create table]
  
  CREATE TABLE user_data (
  
