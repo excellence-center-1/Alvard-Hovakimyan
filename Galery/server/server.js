@@ -3,31 +3,30 @@ const app = express();
 const pool = require('./db');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const multer = require('multer');
-const path = require('path');
+const cors = require('cors');
 
 app.use(express.json());
 app.use(cors());
-/*
-const storage = multer.diskStorage({
+
+/*const storage = multer.diskStorage({
   destination: './uploads',
   filename: function (req, file, cb) {
     cb(null, file.originalname);
   }
 });
-const upload = multer({ storage });
-*/
-// Registration endpoint
+const upload = multer({ storage });*/
+
+// Registration
 app.post('/register', async (req, res) => {
-  const { firstName, lastName, password, date_of_birth , email} = req.body;
+  const { firstName, lastName, date_of_birth, email, password} = req.body;
 
   try {
     // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const insertQuery =
-      'INSERT INTO users (first_name, last_name, password, date_of_birth, email) VALUES ($1, $2, $3, $4, $5)';
-    await pool.query(insertQuery, [firstName, lastName, hashedPassword, date_of_birth, email]);
+      'INSERT INTO users (first_name, last_name, date_of_birth, email, password) VALUES ($1, $2, $3, $4, $5)';
+    await pool.query(insertQuery, [firstName, lastName, date_of_birth, email, hashedPassword]);
 
     res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
@@ -37,8 +36,9 @@ app.post('/register', async (req, res) => {
 });
 
 // Login endpoint
-// Login endpoint
 app.post('/login', async (req, res) => {
+  /*
+  app.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -67,7 +67,10 @@ app.post('/login', async (req, res) => {
     console.error(error);
     res.status(500).json({ message: 'Login failed', error: error.message });
   }
+  */
 });
+// Add Image endpoint
+/*
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -80,9 +83,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-// ...
 
-// Add Image endpoint
 app.post('/upload-image', async (req, res) => {
   try {
     const { filename, category } = req.body;
@@ -96,9 +97,10 @@ app.post('/upload-image', async (req, res) => {
     console.error(error);
     res.status(500).json({ message: 'Failed to upload image', error: error.message });
   }
-});
+});*/
 const PORT =  4000;
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(Server is running on port ${PORT});
 });
+
