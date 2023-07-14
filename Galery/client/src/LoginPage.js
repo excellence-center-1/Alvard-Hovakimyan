@@ -7,33 +7,23 @@ const LoginPage = ({ onLoginSuccess }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     const emailValue = email;
     const passwordValue = password;
-  
-    // Assuming you have a list of users with their credentials
-    const users = [
-      { email: 'user1@example.com', password: 'password1' },
-      { email: 'user2@example.com', password: 'password2' },
-      // Add more users as needed
-    ];
-  
-    // Check if the entered email and password match any user in the list
-    const user = users.find((user) => user.email === emailValue && user.password === passwordValue);
-  
-    if (user) {
-      // Login successful
+
+    // Perform your login logic here using the email and password values
+    // For example, you can make an API request to authenticate the user
+
+    // Assuming the login is successful, call the onLoginSuccess function
+    const isLoginSuccessful = true; // Replace this with your actual login logic
+    if (isLoginSuccessful) {
       onLoginSuccess();
-    } else {
-      // Login failed
-      alert('Invalid email or password');
     }
-   
+
     // Reset the form fields after submission (optional)
     setEmail('');
     setPassword('');
   };
-  
 
   return (
     <div className="container">
@@ -56,7 +46,7 @@ const LoginPage = ({ onLoginSuccess }) => {
             type="password"
             id="password"
             required
-            value={newpassword}
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <div className="underlineHover"></div>
