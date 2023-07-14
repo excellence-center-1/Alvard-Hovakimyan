@@ -9,8 +9,6 @@ go psql and run this code
 
 CREATE USER myuser2 WITH PASSWORD 'mypass';
 
-GRANT ALL PRIVILEGES ON DATABASE your_database_name TO myuser2;
-
 CREATE DATABASE pole;
 
 \c pole
