@@ -20,10 +20,18 @@ GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO myuser2;
  #### create table
  
  CREATE TABLE user_data (
+ 
   id SERIAL PRIMARY KEY,
+  
   firstName VARCHAR(100),
+  
   lastName VARCHAR,
+  
   password VARCHAR,
+  
   date_of_birth VARCHAR,
+  
   email VARCHAR UNIQUE
+  
 );
+
