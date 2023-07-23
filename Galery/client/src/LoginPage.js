@@ -11,10 +11,7 @@ const LoginPage = ({ onLoginSuccess }) => {
     const emailValue = email;
     const passwordValue = password;
 
-    // Perform your login logic here using the email and password values
-    // For example, you can make an API request to authenticate the user
-
-    // Assuming the login is successful, call the onLoginSuccess function
+   
     const isLoginSuccessful = true; // Replace this with your actual login logic
     if (isLoginSuccessful) {
       onLoginSuccess();
