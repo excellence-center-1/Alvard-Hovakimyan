@@ -1,32 +1,23 @@
-import React, { useState } from 'react';
-import LoginPage from './LoginPage';
-import SignupPage from './SignupPage';
-import Galery from './galery';
 import './App.css';
+import { Register } from './Register';
+import { Login } from './Login';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Galery from './Galery';
 
-const App = () => {
-  const [currentPage, setCurrentPage] = useState('login');
-
-  const handleButtonClick = () => {
-    setCurrentPage(currentPage === 'login' ? 'signup' : 'login');
-  };
-
-  const handleLoginSuccess = () => {
-    setCurrentPage('images');
-  };
-
+function App() {
   return (
-    <div className="container">
-      {currentPage === 'login' && <LoginPage onLoginSuccess={handleLoginSuccess} />}
-      {currentPage === 'signup' && <SignupPage />}
-      {currentPage === 'images' && <Galery />}
-      {currentPage !== 'images' && (
-        <button className="toggle-button" onClick={handleButtonClick}>
-          {currentPage === 'login' ? 'Go to Signup' : 'Go to Login'}
-        </button>
-      )}
-    </div>
+
+    <BrowserRouter>
+        <div className="App">
+          <Routes>
+            <Route path='/' element={<Register />} />
+            {/* <Route path='sign-up' element={<WelcomeSignUp />} /> */}
+            <Route path='/login' element={<Login />} />
+            <Route path='/game' element={<Galery />} /> 
+          </Routes>
+        </div>
+      </BrowserRouter>
   );
-};
+}
 
 export default App;

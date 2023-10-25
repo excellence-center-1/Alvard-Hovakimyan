@@ -1,0 +1,37 @@
+/* login.css */
+
+/* Form container with gradient background */
+.container {
+  background: linear-gradient(135deg, #007BFF, #FFFFFF); /* Light blue to white gradient */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+}
+
+/* Form input label text color */
+.form-label {
+  color: #007BFF; /* Blue color for label text */
+}
+
+/* Error message styling */
+.errmsg {
+  color: #DC3545; /* Red color for error messages */
+}
+
+/* Button style */
+.btn-primary {
+  background: linear-gradient(135deg, #007BFF, #FFFFFF); /* Blue to white gradient for the button */
+  border: none;
+  color: #FFFFFF; /* White text color for the button */
+}
+
+/* Link style */
+.text-secondary {
+  color: #007BFF; /* Blue color for the link */
+  text-decoration: none;
+  margin-top: 20px;
+}
+.form-label {
+    color: #ffff;
+}
