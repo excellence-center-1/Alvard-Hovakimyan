@@ -6,6 +6,15 @@ cd server
 npm i
 
 ## Usage
+
+create .env file
+
+PG_USERNAME=
+PASSWORD=
+DATABASE=
+HOST=
+
+
 cd client
 npm start
 cd server
