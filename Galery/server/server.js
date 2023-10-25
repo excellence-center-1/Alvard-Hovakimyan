@@ -32,13 +32,13 @@ app.get('/', (request, response) => {
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' }); // Define an upload destination
 
-app.post('/upload', upload.single('image'), async (req, res) => {
+app.post('/upload',  async (req, res) => {
   try {
     const { category } = req.body;
     const imageurl = req.file.path; // This is the file path where the image is stored
 
     // Create a new image record in the database
-    const newImage = await Image.create({ imageurl, category });
+    const newImage = await image1.create({ imageurl, category });
 
     res.status(201).json({ message: 'Image uploaded successfully', image: newImage });
   } catch (error) {
