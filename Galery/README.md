@@ -9,7 +9,7 @@ npm i
 
 create .env file
 
-PG_USERNAME=
+PG_USERNAME= 
 PASSWORD=
 DATABASE=
 HOST=
